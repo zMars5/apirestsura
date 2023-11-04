@@ -4,6 +4,7 @@ public enum Msj {
 
     ERROR_REGISTRO("Error al registrarse"),
 
+    ERROR_NO_ENCUENTRA("No se ha encontrado el elemento brindado")
 
     ;
 

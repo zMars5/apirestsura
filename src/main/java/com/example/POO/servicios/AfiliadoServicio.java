@@ -6,6 +6,8 @@ import com.example.POO.servicios.utilidades.Msj;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AfiliadoServicio {
 
@@ -25,6 +27,18 @@ public class AfiliadoServicio {
 
     //Consultar un afiliado
 
+    public Afiliado consultarAfiliado(Integer idAfiliado) throws Exception{
+        try {
+            Optional<Afiliado> afiliadoBuscado = this.afiliadoRepositorio.findById(idAfiliado); // La logica nos dice que puede estar o no, asi que no puede retornar tal cual porque puede no encontrar nada, para eso es el optional.
+            if(afiliadoBuscado.isPresent()){ //se encontró en la base de datos
+                return afiliadoBuscado.get();
+            }else {
+                throw new Exception(Msj.ERROR_NO_ENCUENTRA.getMensaje());
+            }
+        }catch (Exception error){
+            throw new Exception(Msj.ERROR_NO_ENCUENTRA.getMensaje());
+        }
+    }
 
     //Consultar afiliados (todos)
 
