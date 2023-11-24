@@ -2,6 +2,7 @@ package com.example.POO.entidades;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -17,7 +18,7 @@ public class Examen {
     @Column(name = "nombreExamen", length = 200, nullable = false)
     private String nombreExamen;
     @Column(name = "fecha", nullable = false)
-    private LocalDateTime fechaExamen;
+    private LocalDate fechaExamen;
 
     @Column(name = "imagenExamen", length = 200, nullable = false)
     private String imagenExamen;
@@ -25,7 +26,7 @@ public class Examen {
     public Examen() {
     }
 
-    public Examen(Integer id, String nombreExamen, LocalDateTime fechaExamen, String imagenExamen) {
+    public Examen(Integer id, String nombreExamen, LocalDate fechaExamen, String imagenExamen) {
         this.id = id;
         this.nombreExamen = nombreExamen;
         this.fechaExamen = fechaExamen;
@@ -48,11 +49,11 @@ public class Examen {
         this.nombreExamen = nombreExamen;
     }
 
-    public LocalDateTime getFechaExamen() {
+    public LocalDate getFechaExamen() {
         return fechaExamen;
     }
 
-    public void setFechaExamen(LocalDateTime fechaExamen) {
+    public void setFechaExamen(LocalDate fechaExamen) {
         this.fechaExamen = fechaExamen;
     }
 

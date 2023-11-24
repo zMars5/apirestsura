@@ -2,6 +2,7 @@ package com.example.POO.entidades;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -21,12 +22,12 @@ public class SignoVital {
     @Column(name = "minimoNormal", nullable = false)
     private Double minimoNormal;
     @Column(name = "fecha", nullable = false)
-    private LocalDateTime fecha;
+    private LocalDate fecha;
 
     public SignoVital() {
     }
 
-    public SignoVital(Integer id, String nombre, Integer unidadMedida, Double maximoNormal, Double minimoNormal, LocalDateTime fecha) {
+    public SignoVital(Integer id, String nombre, Integer unidadMedida, Double maximoNormal, Double minimoNormal, LocalDate fecha) {
         this.id = id;
         this.nombre = nombre;
         this.unidadMedida = unidadMedida;
@@ -75,11 +76,11 @@ public class SignoVital {
         this.minimoNormal = minimoNormal;
     }
 
-    public LocalDateTime getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDateTime fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 }
